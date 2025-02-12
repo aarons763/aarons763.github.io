@@ -6,16 +6,20 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Lato', Arial, sans-serif; /* Apply Lato to the entire website */
+    font-family: 'Lato', Arial, sans-serif;
+    /* Apply Lato to the entire website */
     color: #ffffff;
     background-color: #000000;
-    padding-top: 60px; /* Adjust based on your fixed nav bar height */
+    padding-top: 60px;
+    /* Adjust based on your fixed nav bar height */
 }
 
 /* Fade-in animation */
 .fade-in {
-    opacity: 0; /* Start invisible */
-    transform: translateY(20px); /* Start 20px below */
+    opacity: 0;
+    /* Start invisible */
+    transform: translateY(20px);
+    /* Start 20px below */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -31,7 +35,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     position: fixed;
     top: 0;
@@ -39,8 +43,10 @@ nav {
     width: 100%;
     z-index: 1000;
     box-sizing: border-box;
-    backdrop-filter: blur(10px); /* Apply blur effect */
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    backdrop-filter: blur(10px);
+    /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari support */
 }
 
 nav h1 {
@@ -67,9 +73,12 @@ nav a:active {
 
 /* Navigation Bar Icons */
 nav a i {
-    font-size: 24px; /* Adjust icon size */
-    vertical-align: middle; /* Align icons with text */
-    margin-left: 12px; /* Add spacing between icons and other links */
+    font-size: 24px;
+    /* Adjust icon size */
+    vertical-align: middle;
+    /* Align icons with text */
+    margin-left: 12px;
+    /* Add spacing between icons and other links */
 }
 
 /* Welcome Section */
@@ -150,7 +159,8 @@ nav a i {
     display: block;
     text-decoration: none;
     color: white;
-    transition: box-shadow 0.4s ease-in-out; /* Smooth shadow transition */
+    transition: box-shadow 0.4s ease-in-out;
+    /* Smooth shadow transition */
 }
 
 .project-box img {
@@ -180,15 +190,18 @@ nav a i {
     margin: 0;
     font-size: 24px;
     text-shadow: 0 0 4px white;
-    opacity: 1; /* Visible by default */
+    opacity: 1;
+    /* Visible by default */
     transition: opacity 0.4s ease-in-out;
 }
 
 /* Description */
 .overlay .description {
     font-size: 16px;
-    opacity: 0; /* Initially hidden */
-    visibility: hidden; /* Ensures it's removed from interactions */
+    opacity: 0;
+    /* Initially hidden */
+    visibility: hidden;
+    /* Ensures it's removed from interactions */
     transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 }
 
@@ -218,8 +231,8 @@ nav a i {
 }
 
 .footer-section {
-    text-align:center;
-    align-items:baseline;
+    text-align: center;
+    align-items: baseline;
 }
 
 /* Responsive Design */
@@ -230,7 +243,8 @@ nav a i {
         padding: 40px 20px;
     }
 
-    .image-placeholder, .welcome-message {
+    .image-placeholder,
+    .welcome-message {
         width: 100%;
         margin-bottom: 20px;
     }
