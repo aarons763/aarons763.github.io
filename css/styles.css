@@ -240,17 +240,26 @@ nav a i {
     .welcome-section {
         flex-direction: column;
         height: auto;
-        padding: 40px 20px;
+        padding: 20px 20px;
+        margin: 0 auto;
     }
 
     .image-placeholder,
     .welcome-message {
-        width: 100%;
+        width: 95%;
         margin-bottom: 20px;
     }
 
     .welcome-message {
         text-align: center;
+    }
+
+    .filler-section {
+        width: 95%
+    }
+
+    .projects-section {
+        max-width: 768px;
     }
 
     .project-grid {
