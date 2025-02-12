@@ -247,11 +247,8 @@ nav a i {
     .image-placeholder,
     .welcome-message {
         width: 95%;
+        margin: 0 auto;
         margin-bottom: 20px;
-    }
-
-    .welcome-message {
-        text-align: center;
     }
 
     .filler-section {
