@@ -192,10 +192,11 @@ nav a i {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10%;
+    gap: max(10vw, 30px);
     padding: 4%;
     max-width: 1200px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .project-box {
