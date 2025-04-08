@@ -1,0 +1,14 @@
+/*Project 1 styles */
+
+h1 {
+    text-align: center;
+    font-size: 64px;
+}
+
+p {
+    padding: 20px;
+    max-width: 60%;
+    margin: auto auto;
+    line-height: 1.6;
+    font-size: 20px;
+}

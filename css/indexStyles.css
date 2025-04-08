@@ -149,11 +149,6 @@
     box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
 }
 
-.footer-section {
-    text-align: center;
-    align-items: baseline;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     nav h1 {

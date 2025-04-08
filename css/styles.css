@@ -10,7 +10,7 @@ body {
     /* Apply Lato to the entire website */
     color: #ffffff;
     background-color: #000000;
-    padding-top: 60px;
+    padding-top: 80px;
     /* Adjust based on your fixed nav bar height */
 }
 
@@ -126,4 +126,9 @@ nav a i {
     /* Align icons with text */
     margin-left: 12px;
     /* Add spacing between icons and other links */
+}
+
+.footer-section {
+    text-align: center;
+    align-items: baseline;
 }
