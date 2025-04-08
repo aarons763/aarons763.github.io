@@ -1,0 +1,251 @@
+/* Welcome Section */
+.welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80vh;
+    padding: 20px 20px;
+}
+
+.image-placeholder {
+    width: 40%;
+    aspect-ratio: 1/0.75;
+    background-color: #ccc;
+    border-radius: 10px;
+    margin-left: 8%;
+    box-shadow: 0 0 10px 6px white;
+}
+
+.welcome-message {
+    width: 45%;
+    text-align: center;
+}
+
+.welcome-message h2 {
+    font-size: 5vw;
+    margin: 0;
+    text-shadow: 0 0 4px white;
+}
+
+/* Filler Section */
+.filler-section {
+    padding: 80px 0px;
+    text-align: left;
+    width: 65%;
+    margin: 0 auto;
+}
+
+.filler-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.filler-section span {
+    text-shadow: 0 0 4px white;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 60px 0px;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 4px white;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: max(10vw, 30px);
+    padding: 4%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.project-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1.4;
+    border-radius: 10px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: box-shadow 0.4s ease-in-out;
+    /* Smooth shadow transition */
+}
+
+.project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background 0.4s ease-in-out;
+}
+
+/* Title */
+.overlay h3 {
+    margin: 0;
+    font-size: 24px;
+    text-shadow: 0 0 4px white;
+    opacity: 1;
+    /* Visible by default */
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Description */
+.overlay .description {
+    font-size: 16px;
+    opacity: 0;
+    /* Initially hidden */
+    visibility: hidden;
+    /* Ensures it's removed from interactions */
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+/* Hover effects */
+.project-box:hover img {
+    opacity: 0.3;
+}
+
+.project-box:hover .overlay {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Hide title smoothly */
+.project-box:hover .overlay h3 {
+    opacity: 0;
+}
+
+/* Show description smoothly */
+.project-box:hover .overlay .description {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Smooth fade-in for box-shadow */
+.project-box:hover {
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
+}
+
+.footer-section {
+    text-align: center;
+    align-items: baseline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav h1 {
+        font-size: 6vw;
+    }
+
+    nav .nav-right .nav-links {
+        display: none;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 200px;
+        /* Adjust width as per your preference */
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px 0;
+    }
+
+    nav .nav-right .nav-links a {
+        margin-left: 0;
+        /* Remove left margin */
+        padding: 10px 0;
+        display: block;
+        /* Stack links vertically */
+    }
+
+    /* When active, show the nav-links */
+    nav .nav-links.active {
+        display: block;
+    }
+
+    /* Optional: Add transition for smooth appearance */
+    nav .nav-links.active {
+        transition: opacity 0.3s ease;
+    }
+
+    nav .nav-right .nav-toggle {
+        display: block;
+        /* Show burger button */
+    }
+
+    nav a i {
+        font-size: 24px;
+    }
+
+    .welcome-section {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 40px;
+        margin: 0 auto;
+    }
+
+    .image-placeholder,
+    .welcome-message {
+        width: 95%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .welcome-message h2 {
+        font-size: 8vw;
+    }
+
+    .filler-section {
+        width: 95%
+    }
+
+    .projects-section {
+        max-width: 768px;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    .lg-view {
+        display: none;
+    }
+
+    .sm-view {
+        display: inline-block;
+    }
+
+    .projects-section {
+        max-width: 480px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
