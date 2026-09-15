@@ -1,190 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aaron Sun — Electrical Engineering</title>
-<meta name="description" content="Aaron Sun, electrical engineering student. Embedded systems, PCB design, and hardware prototyping.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Aaron Sun — Electrical Engineering student at the University of Waterloo. Digital design, hardware validation, and a single-cycle RISC-V CPU."><meta name="theme-color" content="#f5f5ef"><title>Aaron Sun — Electrical Engineering</title><link rel="icon" href="images/favicon-AS.png"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"><link rel="stylesheet" href="css/styles.css"><script src="js/script.js" defer></script></head>
 <body>
-
-<canvas id="board"></canvas>
-
-<nav>
-  <div class="nav-name">Aaron Sun</div>
-  <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-    <a href="files/resume.pdf" target="_blank">Resume</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header id="hero" class="section hero">
-  <div class="designator">U1</div>
-  <div class="hero-text">
-    <p class="kicker">Electrical Engineering, Class of 2027</p>
-    <h1>Aaron Sun builds the boards that make hardware work.</h1>
-    <p class="hero-sub">I design circuits, lay out PCBs, and write the firmware that runs on them — currently looking for a hardware internship where I can take a board from schematic to bring-up.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#projects">See my work</a>
-      <a class="btn btn-ghost" href="mailto:aaron.sun@example.com">Get in touch</a>
-    </div>
-  </div>
-</header>
-
-<!-- ABOUT -->
-<section id="about" class="section about">
-  <div class="designator">U2</div>
-  <div class="about-grid">
-    <div class="about-copy">
-      <h2>Profile</h2>
-      <p>I'm a third-year electrical engineering student who likes the part of a project where a schematic stops being a diagram and starts being a working board. Most of my time goes to embedded systems and analog/digital mixed-signal design — reading datasheets, routing traces, and debugging with an oscilloscope more often than a debugger.</p>
-      <p>Outside of coursework, I build things with my robotics team and tinker with STM32 and AVR boards in my apartment, usually because something I ordered didn't come with good enough documentation.</p>
-    </div>
-    <table class="spec-table">
-      <tbody>
-        <tr><th>Location</th><td>Waterloo, Ontario</td></tr>
-        <tr><th>Program</th><td>B.A.Sc, Electrical Engineering</td></tr>
-        <tr><th>Focus</th><td>Embedded systems, PCB design</td></tr>
-        <tr><th>Toolchain</th><td>KiCad, Altium, STM32CubeIDE</td></tr>
-        <tr><th>Seeking</th><td>Hardware internship, Summer 2027</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="section skills">
-  <div class="designator">R1</div>
-  <h2>Skill bank</h2>
-  <div class="skill-banks">
-    <div class="bank">
-      <h3>Hardware</h3>
-      <ul class="chips">
-        <li>PCB layout</li>
-        <li>Schematic capture</li>
-        <li>Analog filter design</li>
-        <li>Power regulation</li>
-        <li>Soldering &amp; rework</li>
-        <li>Oscilloscope / LA debug</li>
-      </ul>
-    </div>
-    <div class="bank">
-      <h3>Firmware</h3>
-      <ul class="chips">
-        <li>C / C++</li>
-        <li>STM32 HAL &amp; registers</li>
-        <li>Arduino / AVR</li>
-        <li>I2C, SPI, UART</li>
-        <li>RTOS basics</li>
-        <li>Python for test tooling</li>
-      </ul>
-    </div>
-    <div class="bank">
-      <h3>Tools</h3>
-      <ul class="chips">
-        <li>KiCad</li>
-        <li>Altium Designer</li>
-        <li>LTspice</li>
-        <li>MATLAB</li>
-        <li>Git</li>
-        <li>Bench PSU / DMM / LA</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section projects">
-  <div class="designator">U3</div>
-  <h2>Selected builds</h2>
-
-  <article class="project">
-    <div class="project-tag">U3.1</div>
-    <div class="project-body">
-      <h3>Competition SumoBot</h3>
-      <p class="project-meta">Arduino, C, custom chassis — 2nd place, school robotics competition</p>
-      <p>Designed and built a sumo-wrestling robot with a teammate, from mechanical layout to sensor integration. Used IR and proximity sensors to detect the ring edge and opponent position, and tuned the drive logic in C on an Arduino Uno until it stopped pushing itself out of the ring.</p>
-      <div class="project-links">
-        <a href="https://github.com/aarons763" target="_blank">View code <i class="fas fa-arrow-up-right-from-square"></i></a>
-      </div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header wrap"><a class="wordmark" href="#" aria-label="Aaron Sun, home">as<span>.</span><small>AARON SUN</small></a><nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a><a class="resume-link" href="files/Aaron_Sun_Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></nav></header>
+<main id="main">
+<section class="hero wrap" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow"><i class="status-dot"></i> ELECTRICAL ENGINEERING · WATERLOO</p><h1 id="hero-title">Curiosity in.<br><span>Hardware out.</span></h1><p class="intro">Hey, I’m Aaron. I’m an electrical engineering student who likes turning ideas into things that work.</p><p class="hero-sub">Building digital hardware, verifying designs, and connecting code to the bench.</p><div class="hero-actions"><a class="button primary" href="#projects">Explore my work <span>↘</span></a><a class="text-link" href="files/Aaron_Sun_Resume.pdf" target="_blank" rel="noopener">View résumé ↗</a></div><div class="availability"><i class="status-dot"></i> Looking for my next hardware opportunity</div></div>
+<div class="board-panel"><div class="panel-top"><span>FIG. 01 / THE HARDWARE MINDSET</span><span class="live-label">● SYSTEM ACTIVE</span></div>
+<svg class="circuit" viewBox="0 0 560 400" role="img" aria-labelledby="board-title"><title id="board-title">Conceptual circuit board: curiosity flows through a processor to become hardware</title><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#c9cec4"/></pattern></defs><rect width="560" height="400" fill="url(#dots)"/><g fill="none" stroke="#a6b49d" stroke-width="2"><path d="M0 80h120l50 50h65M20 120h85l40 40h90M0 320h115l65-65h55M70 400v-60l45-45h120M310 130h60l60-60h130M325 160h85l40-40h110M325 250h50l55 55h130M290 270v65l40 40h230M270 130V55l35-35V0M250 130V65L215 30V0"/><path d="M0 220h145v-30h90M325 210h140v-25h95" stroke="#607b45" stroke-width="3"/></g><g fill="#f5f5ef" stroke="#8e9f82" stroke-width="2"><circle cx="120" cy="80" r="5"/><circle cx="105" cy="120" r="5"/><circle cx="115" cy="320" r="5"/><circle cx="430" cy="70" r="5"/><circle cx="430" cy="305" r="5"/><circle cx="330" cy="375" r="5"/></g><g stroke="#899380" stroke-width="6"><path d="M210 150h25m-25 20h25m-25 20h25m-25 20h25m-25 20h25m-25 20h25M325 150h25m-25 20h25m-25 20h25m-25 20h25m-25 20h25m-25 20h25M250 110v25m20-25v25m20-25v25m20-25v25M250 265v25m20-25v25m20-25v25m20-25v25"/></g><rect x="227" y="127" width="106" height="146" rx="5" fill="#28352a" stroke="#53634a" stroke-width="2"/><rect x="237" y="137" width="86" height="126" rx="2" fill="#344431" stroke="#617052"/><circle cx="247" cy="148" r="3" fill="#98ab80"/><text x="280" y="205" text-anchor="middle" fill="#e6ecd7" font-family="Arial,sans-serif" font-weight="bold" font-size="37">as.</text><text x="280" y="232" text-anchor="middle" fill="#b3c19e" font-family="monospace" font-size="9" letter-spacing="2">ENGINEERING</text><g font-family="monospace" font-size="10" letter-spacing="1" fill="#64705a"><text x="35" y="204">CURIOSITY_IN</text><text x="446" y="170">BUILD_OUT</text><text x="41" y="365">01 / EXPLORE</text><text x="409" y="348">02 / ITERATE</text></g><circle class="signal" cx="145" cy="220" r="5" fill="#719546"/><circle class="signal second" cx="465" cy="210" r="5" fill="#719546"/></svg>
+<div class="panel-bottom"><span>INPUT → THINK → BUILD → REPEAT</span><button id="signal-toggle" type="button" aria-pressed="true">Pause signal Ⅱ</button></div></div></section>
+<div class="discipline-strip"><div class="wrap"><span>HARDWARE × SOFTWARE</span><span>Digital design</span><span class="strip-plus">+</span><span>Hardware validation</span><span class="strip-plus">+</span><span>Hands-on prototyping</span><span class="strip-end">ALWAYS LEARNING ↗</span></div></div>
+<section class="projects wrap section" id="projects" aria-labelledby="projects-title"><div class="section-heading"><div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="projects-title">Ideas, made tangible.</h2></div><p>From RTL to verification.<br>A closer look at my latest build.</p></div><div class="project-grid featured-grid">
+  <article class="project-card featured-project">
+    <a class="project-visual cpu-visual" href="projects/riscv-cpu.html" aria-label="Explore the RISC-V CPU project">
+      <span class="visual-label">DIGITAL DESIGN / 01</span>
+      <span class="cpu-diagram" aria-hidden="true"><span class="cpu-input">INSTRUCTION</span><span class="cpu-trace"></span><span class="cpu-core"><small>SINGLE-CYCLE</small><strong>RV32I</strong><span>RISC-V CPU</span></span><span class="cpu-trace"></span><span class="cpu-output">RESULT</span></span>
+      <span class="visual-caption">DESIGN → VERIFY → SYNTHESIZE</span><span class="visual-arrow">↗</span>
+    </a>
+    <div class="project-info"><div class="project-meta"><span>RTL DESIGN / VERIFICATION</span><span>SEP 2026</span></div>
+      <h3><a href="projects/riscv-cpu.html">RISC-V CPU <span aria-hidden="true">↗</span></a></h3>
+      <p>A single-cycle RV32I processor built in SystemVerilog, with a layered verification suite, a Python assembler, and a synthesized gate-level netlist.</p>
+      <div class="project-highlights"><div><strong>10,000+</strong><span>randomized ALU instructions tested</span></div><div><strong>24 checks</strong><span>full-core instruction regression</span></div></div>
+      <div class="tags"><span>SystemVerilog</span><span>Python</span><span>Yosys</span><span>Verilator</span></div>
+      <a class="project-read-link text-link" href="projects/riscv-cpu.html">Explore the project →</a>
     </div>
   </article>
-
-  <article class="project">
-    <div class="project-tag">U3.2</div>
-    <div class="project-body">
-      <h3>STM32 Motor Controller</h3>
-      <p class="project-meta">STM32, C++, KiCad — personal project</p>
-      <p>Built a small brushed-DC motor controller board around an STM32, including current sensing and a basic PID loop for speed control. This was my first time taking a design fully through schematic, layout, and a hand-soldered bring-up — including finding out the hard way why decoupling capacitor placement matters.</p>
-      <div class="project-links">
-        <a href="https://github.com/aarons763" target="_blank">View code <i class="fas fa-arrow-up-right-from-square"></i></a>
-      </div>
-    </div>
-  </article>
-
-  <article class="project">
-    <div class="project-tag">U3.3</div>
-    <div class="project-body">
-      <h3>Battery Monitor Board</h3>
-      <p class="project-meta">KiCad, I2C, Python — in progress</p>
-      <p>Designing a two-cell battery monitoring board with a coulomb counter IC, exposing state of charge over I2C to a host microcontroller and logged to a laptop over serial for testing. Currently on the second layout revision after the first one had a footprint mismatch on the fuel gauge IC.</p>
-      <div class="project-links">
-        <a href="https://github.com/aarons763" target="_blank">View code <i class="fas fa-arrow-up-right-from-square"></i></a>
-      </div>
-    </div>
-  </article>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" class="section experience">
-  <div class="designator">U4</div>
-  <h2>Experience &amp; education</h2>
-  <ol class="timeline">
-    <li>
-      <span class="tl-date">2024 — Present</span>
-      <h3>B.A.Sc, Electrical Engineering</h3>
-      <p>Coursework in circuit analysis, embedded systems, signals, and electromagnetics. Robotics club member, currently working on the team's motor control subsystem.</p>
-    </li>
-    <li>
-      <span class="tl-date">Summer 2025</span>
-      <h3>Hardware Lab Assistant, University Robotics Lab</h3>
-      <p>Assembled and tested prototype sensor boards for a graduate research project, and helped debug intermittent I2C bus faults traced back to a missing pull-up on one revision.</p>
-    </li>
-    <li>
-      <span class="tl-date">2023</span>
-      <h3>Sumo Robotics Competition</h3>
-      <p>Placed 2nd overall designing and building a sumo-wrestling robot with a team of three.</p>
-    </li>
-  </ol>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section contact">
-  <div class="designator">J1</div>
-  <h2>Let's talk hardware</h2>
-  <p>I'm looking for a hardware internship for summer 2027 — happy to send my resume or walk through any of the projects above in more detail.</p>
-  <div class="contact-links">
-    <a href="mailto:aaron.sun@example.com"><i class="fas fa-envelope"></i> aaron.sun@example.com</a>
-    <a href="https://www.linkedin.com/in/aaron-sun-036295328" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://github.com/aarons763" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    <a href="files/resume.pdf" target="_blank"><i class="fas fa-file-arrow-down"></i> Resume</a>
-  </div>
-</section>
-
-<footer>
-  <p>Designed and built by Aaron Sun, 2026.</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+</div><a class="github-note" href="https://github.com/aarons763" target="_blank" rel="noopener"><span>More experiments live on GitHub.</span><span>Explore the code ↗</span></a></section>
+<section class="about-section" id="about"><div class="wrap about-grid section"><div><p class="eyebrow">02 / A LITTLE ABOUT ME</p><h2>At home at the intersection<br>of hardware <span class="serif">&</span> software.</h2></div><div class="about-copy"><p>I’m Aaron Sun, an electrical engineering undergraduate at the University of Waterloo. I’m interested in how physical systems work—and how to make them work better with code.</p><p>My experience spans electrical design at Plan Group, PCB rework and testing at Avnan, and semiconductor validation at New Radio Tech. I bring that hands-on perspective to digital design—from writing RTL to checking that it behaves as intended.</p><div class="skill-list">
+<div><span>HARDWARE</span><p>PCB design · Schematic capture · PCB layout · SMD &amp; through-hole soldering · STM32 · Arduino</p></div>
+<div><span>EDA / DESIGN</span><p>Altium Designer · KiCad · Revit · AutoCAD · ERC/DRC</p></div>
+<div><span>PROGRAMMING</span><p>C/C++ · Python (Pandas, NumPy, Matplotlib) · Verilog · SystemVerilog · VHDL</p></div>
+<div><span>TOOLS</span><p>Git · GitHub · Linux · VS Code</p></div>
+</div></div></div></section>
+<section class="contact wrap section" id="contact"><p class="eyebrow"><i class="status-dot"></i> 03 / WHAT’S NEXT</p><div class="contact-row"><h2>Let’s build<br>something <span class="serif">real.</span></h2><div><p>I’m looking for opportunities to learn, contribute,<br>and build as part of a hardware team.</p><a class="button primary" href="https://www.linkedin.com/in/aaron-sun-036295328" target="_blank" rel="noopener">Let’s connect on LinkedIn ↗</a><a class="contact-resume text-link" href="files/Aaron_Sun_Resume.pdf" target="_blank" rel="noopener">Get my résumé ↗</a></div></div></section>
+</main><footer class="wrap"><span>© <span id="year">2026</span> Aaron Sun</span><span class="footer-center">MADE WITH CURIOSITY & A LITTLE CODE</span><a href="#">Back to top ↑</a></footer>
+</body></html>

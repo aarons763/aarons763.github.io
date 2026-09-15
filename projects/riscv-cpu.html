@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aaron Sun's single-cycle RV32I CPU: SystemVerilog RTL, layered verification, a Python assembler, and Yosys synthesis.">
+  <meta name="theme-color" content="#f5f5ef">
+  <title>RISC-V CPU — Aaron Sun</title>
+  <link rel="icon" href="../images/favicon-AS.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header wrap">
+    <a class="wordmark" href="../index.html" aria-label="Aaron Sun, home">as<span>.</span><small>AARON SUN</small></a>
+    <nav aria-label="Main navigation"><a href="../index.html#projects">Projects</a><a href="../index.html#about">About</a><a href="../index.html#contact">Contact</a><a class="resume-link" href="../files/Aaron_Sun_Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></nav>
+  </header>
+  <main id="main" class="wrap project-page">
+    <a class="text-link back-link" href="../index.html#projects">← All projects</a>
+    <section class="project-intro" aria-labelledby="cpu-title">
+      <p class="eyebrow">DIGITAL DESIGN / SEPTEMBER 2026</p>
+      <h1 id="cpu-title">A CPU, from<br><span>the logic up.</span></h1>
+      <p class="project-lede">A single-cycle RISC-V processor implementing RV32I, built in SystemVerilog and verified with module tests, full-core regression, and a Python reference model.</p>
+      <div class="tags"><span>SystemVerilog</span><span>Python</span><span>Yosys</span><span>Verilator</span></div>
+    </section>
+    <div class="cpu-metrics" aria-label="Project results">
+      <div><strong>RV32I</strong><span>Single-cycle architecture</span></div>
+      <div><strong>10,000+</strong><span>Randomized ALU instructions · 100% pass</span></div>
+      <div><strong>24 checks</strong><span>Full-core instruction regression</span></div>
+      <div><strong>121 cells</strong><span>Yosys gate-level netlist</span></div>
+    </div>
+    <section class="project-chapter" aria-labelledby="architecture-title">
+      <div><p class="eyebrow">01 / ARCHITECTURE</p><h2 id="architecture-title">Building the core.</h2></div>
+      <div class="chapter-copy"><p>I designed and implemented the CPU’s ALU, register file, control decoder, immediate generator, and memory subsystem in SystemVerilog.</p><p>The single-cycle architecture brings these components together to execute RV32I instructions. The project covers both the hardware implementation and the tooling needed to test it.</p></div>
+    </section>
+    <figure class="architecture-figure">
+      <figcaption><span class="eyebrow">CORE COMPONENTS</span><span>Conceptual component overview</span></figcaption>
+      <div class="architecture-blocks"><div><small>01</small><strong>Control decoder</strong></div><div><small>02</small><strong>Register file</strong></div><div class="alu-block"><small>03</small><strong>ALU</strong></div><div><small>04</small><strong>Immediate generator</strong></div><div><small>05</small><strong>Memory subsystem</strong></div></div>
+      <div class="architecture-caption">SYSTEMVERILOG RTL <span>RV32I / SINGLE-CYCLE</span></div>
+    </figure>
+    <section class="project-chapter" aria-labelledby="verification-title">
+      <div><p class="eyebrow">02 / VERIFICATION</p><h2 id="verification-title">Test at every level.</h2></div>
+      <div class="chapter-copy"><p>I built a layered verification suite to check individual modules and the integrated processor.</p><ul class="detail-list"><li><strong>Per-module unit tests</strong><span>Check the individual building blocks of the CPU.</span></li><li><strong>Full-core instruction regression</strong><span>A 24-check regression exercises the integrated core.</span></li><li><strong>Randomized differential testing</strong><span>Compare results against a Python golden model. More than 10,000 randomized ALU instructions achieved a 100% pass rate.</span></li></ul></div>
+    </section>
+    <section class="project-chapter" aria-labelledby="assembler-title">
+      <div><p class="eyebrow">03 / TOOLING</p><h2 id="assembler-title">An assembler for the tests.</h2></div>
+      <div class="chapter-copy"><p>I wrote a two-pass Python assembler with label resolution to generate test programs. It eliminates hand-computed branch and jump offsets, making test programs easier to write and update.</p></div>
+    </section>
+    <section class="project-chapter" aria-labelledby="synthesis-title">
+      <div><p class="eyebrow">04 / LINT &amp; SYNTHESIS</p><h2 id="synthesis-title">From RTL to a netlist.</h2></div>
+      <div class="chapter-copy"><p>I checked the design with Verilator lint and synthesized it with Yosys. The synthesis run produced a clean 121-cell gate-level netlist with no synthesis errors.</p></div>
+    </section>
+    <div class="project-end"><a class="text-link" href="../index.html#projects">← Back to selected work</a><a class="button primary" href="../index.html#contact">Let’s connect ↗</a></div>
+  </main>
+  <footer class="wrap"><span>© <span id="year">2026</span> Aaron Sun</span><span class="footer-center">MADE WITH CURIOSITY &amp; A LITTLE CODE</span><a href="#">Back to top ↑</a></footer>
+</body>
+</html>
