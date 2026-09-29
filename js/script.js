@@ -25,6 +25,7 @@ function openProject(id, trigger = null) {
   if (!projectDialog.open) projectDialog.showModal();
   projectDialog.scrollTop = 0;
   document.body.classList.add('modal-open');
+  initializeBoardViewer(projectContent);
 }
 document.querySelectorAll('[data-project]').forEach(button => {
   button.addEventListener('click', () => openProject(button.dataset.project, button));
@@ -45,4 +46,43 @@ if (projectDialog) {
   };
   window.addEventListener('hashchange', openFromHash);
   openFromHash();
+}
+
+// The self-hosted viewer and model are only loaded when the PCB popup opens.
+async function initializeBoardViewer(scope) {
+  const viewer = scope.querySelector('model-viewer');
+  if (!viewer) return;
+  const wrapper = scope.querySelector('.board-viewer');
+  const status = scope.querySelector('.viewer-status');
+  const controls = [...scope.querySelectorAll('[data-view]')];
+  controls.forEach(button => { button.disabled = true; });
+  const fail = () => {
+    if (!wrapper.isConnected) return;
+    wrapper.setAttribute('aria-busy', 'false');
+    status.textContent = '3D view unavailable. Static board preview shown.';
+  };
+  viewer.addEventListener('error', fail, { once: true });
+  const ready = () => {
+    if (!wrapper.isConnected) return;
+    wrapper.classList.add('viewer-ready');
+    wrapper.setAttribute('aria-busy', 'false');
+    controls.forEach(button => { button.disabled = false; });
+  };
+  viewer.addEventListener('load', ready, { once: true });
+  try {
+    await import(new URL('js/vendor/model-viewer.min.js', document.baseURI).href);
+    await customElements.whenDefined('model-viewer');
+    if (!viewer.isConnected) return;
+    if (viewer.loaded) ready();
+    controls.forEach(button => button.addEventListener('click', () => {
+      const action = button.dataset.view;
+      if (action === 'in' || action === 'out') {
+        const orbit = viewer.getCameraOrbit();
+        viewer.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius * (action === 'in' ? .8 : 1.25)}m`;
+      } else {
+        viewer.cameraTarget = 'auto auto auto';
+        viewer.cameraOrbit = action === 'top' ? '0deg 0deg 110%' : action === 'bottom' ? '0deg 180deg 110%' : '35deg 55deg 110%';
+      }
+    }));
+  } catch (error) { fail(); }
 }
