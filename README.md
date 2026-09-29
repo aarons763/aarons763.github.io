@@ -24,3 +24,11 @@ Embedded Altium component models were retained. Six missing bodies were substitu
 `js/vendor/model-viewer.min.js` is Google model-viewer 4.1.0, locally hosted under Apache 2.0 (see the adjacent license). It loads only when the PCB popup opens. The model supports drag/touch orbit, zoom, pan, top/bottom views, and reset. A static poster stays available when 3D loading fails. Model-viewer uses the browser's WebGL renderer; no external model service is needed.
 
 The old CPU project page redirects to its popup. Add future content inside the two project templates. Google Fonts is optional; system fallbacks are provided.
+
+## Current theme and copper inspection
+
+The playful skin is isolated in `css/playful.css`, with rounded Nunito typography, DM Mono labels, lavender/peach accents, and outlined cards. The original layout remains in `css/styles.css`.
+
+The assembled 3D export now includes tracks, pads, copper zones, soldermask, and all 111 via holes. `images/projects/stm32-board-copper.glb` is the corresponding unmasked view for routing inspection. The Assembled/Copper buttons swap those models on demand, preserving orbit/zoom interaction. Original Altium layer-import and package-substitution limitations still apply; this is a web visualization rather than the native Altium renderer.
+
+The CPU repository README was updated to the same datapath illustration in commit `1dc3d685b9260605b3c72c88f6fac4c955a6aec8` at https://github.com/aarons763/riscv-cpu.

@@ -68,7 +68,7 @@ async function initializeBoardViewer(scope) {
     wrapper.setAttribute('aria-busy', 'false');
     controls.forEach(button => { button.disabled = false; });
   };
-  viewer.addEventListener('load', ready, { once: true });
+  viewer.addEventListener('load', ready);
   try {
     await import(new URL('js/vendor/model-viewer.min.js', document.baseURI).href);
     await customElements.whenDefined('model-viewer');
@@ -76,7 +76,18 @@ async function initializeBoardViewer(scope) {
     if (viewer.loaded) ready();
     controls.forEach(button => button.addEventListener('click', () => {
       const action = button.dataset.view;
-      if (action === 'in' || action === 'out') {
+      if (action === 'assembled' || action === 'copper') {
+        const source = action === 'copper' ? 'images/projects/stm32-board-copper.glb' : 'images/projects/stm32-board.glb';
+        if (viewer.getAttribute('src') === source) return;
+        wrapper.classList.remove('viewer-ready');
+        wrapper.setAttribute('aria-busy', 'true');
+        status.textContent = 'Loading board view…';
+        controls.forEach(control => { control.disabled = true; });
+        scope.querySelectorAll('[data-view=assembled], [data-view=copper]').forEach(control => {
+          control.setAttribute('aria-pressed', String(control.dataset.view === action));
+        });
+        viewer.setAttribute('src', source);
+      } else if (action === 'in' || action === 'out') {
         const orbit = viewer.getCameraOrbit();
         viewer.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius * (action === 'in' ? .8 : 1.25)}m`;
       } else {
