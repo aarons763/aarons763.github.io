@@ -1030,3 +1030,50 @@ body.modal-open {
   .featured-project .project-info { padding: 22px 17px; }
   .architecture-caption { flex-direction: column; gap: 8px; }
 }
+
+/* Project galleries and header social links. */
+.social-links { display: flex; align-items: center; gap: 15px; }
+.social-links a { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; min-height: 32px; }
+.social-links svg { width: 19px; height: 19px; fill: currentColor; }
+.social-links a:hover { color: var(--green); }
+.portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.portfolio-grid .project-card { display: flex; flex-direction: column; }
+.portfolio-grid .project-info { flex: 1; display: flex; flex-direction: column; }
+.portfolio-grid .project-info .tags { margin-top: auto; }
+.portfolio-grid .project-read-link { border: 0; background: none; padding: 0; text-align: left; align-self: flex-start; }
+.evidence-cover { padding: 0; height: 285px; }
+.evidence-cover img { display: block; width: 100%; height: calc(100% - 40px); object-fit: contain; transition: transform .2s; }
+.waveform-cover { background: #171c20; }
+.pcb-cover { background: #f0f1e9; }
+.pcb-cover img { padding: 20px; }
+.image-cover-label { display: flex; justify-content: space-between; align-items: center; height: 40px; padding: 0 20px; font: 9px var(--mono); letter-spacing: 1px; background: #e7ebdf; }
+.image-cover-label>span { font-size: 20px; }
+.evidence-dialog { width: min(960px, calc(100% - 36px)); padding: 0 32px 32px; }
+.evidence-dialog .dialog-top { position: sticky; top: 0; z-index: 2; background: var(--paper); padding: 20px 0; border-bottom: 1px solid var(--line); }
+.evidence-dialog .dialog-top button { min-width: 40px; min-height: 40px; }
+.evidence-dialog h2 { max-width: 720px; }
+.evidence-dialog #dialog-content>.eyebrow { margin-top: 24px; }
+.project-evidence { margin: 25px 0; }
+.project-evidence img { width: 100%; display: block; border: 1px solid var(--line); }
+.project-evidence figcaption, .evidence-dialog .evidence-note { font-size: 11px; line-height: 1.7; color: var(--muted); margin-top: 10px; }
+.pcb-evidence-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.pcb-evidence-grid img { aspect-ratio: 1; object-fit: contain; padding: 18px; background: #fff; }
+.evidence-links { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; padding-top: 25px; margin-top: 25px; border-top: 1px solid var(--line); font-size: 13px; }
+@media (max-width: 850px) {
+  .header nav { gap: 18px; }
+  .wordmark small { display: none; }
+}
+@media (max-width: 720px) {
+  .header { height: auto; min-height: 82px; padding-block: 16px; gap: 15px; flex-wrap: wrap; }
+  .header nav { gap: 16px; flex-wrap: wrap; }
+  .social-links { gap: 8px; }
+  .portfolio-grid { grid-template-columns: minmax(0, 1fr); }
+  .evidence-dialog { padding: 0 20px 24px; }
+  .evidence-dialog h2 { font-size: 30px; }
+}
+@media (max-width: 420px) {
+  .header nav { width: 100%; justify-content: space-between; gap: 9px; }
+  .header .wordmark { line-height: 1; }
+  .pcb-evidence-grid { grid-template-columns: minmax(0,1fr); gap: 0; }
+  .evidence-links { align-items: flex-start; flex-direction: column; }
+}
