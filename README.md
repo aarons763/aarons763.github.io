@@ -11,7 +11,7 @@ Static HTML, CSS, and JavaScript site for GitHub Pages. No build step required. 
 
 ## Project media
 
-- `images/projects/cpu-datapath.svg`: editable implementation overview derived from `aarons763/riscv-cpu/rtl/cpu_top.sv`. It covers fetch/decode, operand selection, ALU, memory, writeback, and next-PC logic. Debug outputs are omitted for clarity.
+- `images/projects/cpu-datapath.svg`: editable implementation overview derived from `aarons763/riscv-cpu/rtl/cpu_top.sv`. It covers fetch/decode, operand selection, ALU, memory, writeback, and next-PC logic. Debug outputs are omitted for clarity. Solid green lines show data and solid orange lines show control; matching signal labels denote the same net.
 - `images/projects/cpu-smoke-waveform.png`: actual screenshot from `https://github.com/aarons763/riscv-cpu/blob/main/docs/images/smoke-waveform.png`.
 - `images/projects/stm32-board.glb`: web 3D export of the Altium design via a temporary KiCad import. Original PCB sources were not modified. The import reports an unrecognized layer mapping, so the web model is a visualization, not a manufacturing reference.
 - `images/projects/pcb-3d.png`: rendered from that GLB using the same camera as the popup.
@@ -32,3 +32,5 @@ The playful skin is isolated in `css/playful.css`, with rounded Nunito typograph
 The assembled 3D export now includes tracks, pads, copper zones, soldermask, and all 111 via holes. `images/projects/stm32-board-copper.glb` is the corresponding unmasked view for routing inspection. The Assembled/Copper buttons swap those models on demand, preserving orbit/zoom interaction. Original Altium layer-import and package-substitution limitations still apply; this is a web visualization rather than the native Altium renderer.
 
 The CPU repository README was updated to the same datapath illustration in commit `1dc3d685b9260605b3c72c88f6fac4c955a6aec8` at https://github.com/aarons763/riscv-cpu.
+
+- The editable CPU diagram is in images/projects/cpu-datapath.drawio; its SVG export is used by both the project card and detail view.
