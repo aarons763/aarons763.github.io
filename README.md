@@ -23,7 +23,7 @@ Embedded Altium component models were retained. Six missing bodies were substitu
 
 `js/vendor/model-viewer.min.js` is Google model-viewer 4.1.0, locally hosted under Apache 2.0 (see the adjacent license). It loads only when the PCB popup opens. The model supports drag/touch orbit, zoom, pan, top/bottom views, and reset. A static poster stays available when 3D loading fails. Model-viewer uses the browser's WebGL renderer; no external model service is needed.
 
-The old CPU project page redirects to its popup. Add future content inside the two project templates. Google Fonts is optional; system fallbacks are provided.
+The old CPU project page redirects to its popup. Add future content inside the project templates. Google Fonts is optional; system fallbacks are provided.
 
 ## Current theme and copper inspection
 
@@ -34,3 +34,12 @@ The assembled 3D export now includes tracks, pads, copper zones, soldermask, and
 The CPU repository README was updated to the same datapath illustration in commit `1dc3d685b9260605b3c72c88f6fac4c955a6aec8` at https://github.com/aarons763/riscv-cpu.
 
 - The editable CPU diagram is in images/projects/cpu-datapath.drawio; its SVG export is used by both the project card and detail view.
+
+## Matmul and Pong projects
+
+Selected-work order: tiled matmul, two-player Pong, RISC-V CPU, STM32 board. The new popups also open at `#tiled-matmul` and `#pong`.
+
+- `images/projects/matmul-architecture.svg`: conceptual illustration derived from the architecture documented in aarons763/tiled-matmul; performance figures are from the published single/double-buffer comparison.
+- `images/projects/pong-cover.svg`: illustrative playfield, not a hardware screenshot.
+- `images/projects/pong-system-diagram.png`: original planning diagram from aarons763/298A/assets/system-diagram.png. Its caption identifies differences from the current game.
+- Project details were checked against public repository documentation and the related project chats on October 19, 2026. Implementation status describes simulation/synthesis or reviewed ASIC-flow results, not fabricated hardware.

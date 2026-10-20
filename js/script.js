@@ -38,11 +38,11 @@ if (projectDialog) {
   });
   projectDialog.addEventListener('close', () => {
     document.body.classList.remove('modal-open');
-    if (['#riscv-cpu', '#stm32-board'].includes(location.hash)) history.replaceState(null, '', '#projects');
+    if (['#tiled-matmul', '#pong', '#riscv-cpu', '#stm32-board'].includes(location.hash)) history.replaceState(null, '', '#projects');
     projectTrigger?.focus();
   });
   const openFromHash = () => {
-    if (['#riscv-cpu', '#stm32-board'].includes(location.hash)) openProject(location.hash.slice(1));
+    if (['#tiled-matmul', '#pong', '#riscv-cpu', '#stm32-board'].includes(location.hash)) openProject(location.hash.slice(1));
   };
   window.addEventListener('hashchange', openFromHash);
   openFromHash();
